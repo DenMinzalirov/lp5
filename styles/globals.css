@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+   height: var(--dvh,100vh);
+   width: 100vw;
+}
+
+.pulse-header {
+  animation: pulse-bezier 2s infinite alternate;
+}
+
+@keyframes pulse-bezier {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* Добавляем easing */
+  }
+}
+
+.pulse-bonus {
+  animation: pulse-bonus 2s infinite alternate;
+}
+
+@keyframes pulse-bonus {
+  0% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1.05);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* Добавляем easing */
+  }
+}
+
+.rotate-decor {
+  animation: slow-pulse-rotate 8s linear infinite; 
+}
+
+
+@keyframes slow-pulse-rotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg); /* Увеличение и поворот на 180 градусов в середине */
+  }
+  100% {
+    transform: scale(1) rotate(360deg); /* Возврат к исходному размеру и полный оборот */
+  }
+}
+
+nextjs-portal {
+  display: none;
+}
+
+.wheel-spin {
+  animation: slow-rotate 2s ease-in-out infinite; 
+}
+
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(-6deg);
+}
+50% {
+    transform: rotate(6deg);
+}
+100% {
+    transform: rotate(-6deg);
+}
+}
+
