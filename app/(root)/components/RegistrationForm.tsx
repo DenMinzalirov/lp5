@@ -145,11 +145,11 @@ export function RegistrationForm({ domainData }: RegistrationFormProps) {
 
 	return (
 		<>
-			<div className="w-screen flex items-center justify-center overflow-hidden relative pt-6">
+			<div className="w-screen flex items-center justify-center overflow-y-auto overflow-x-hidden relative pt-6">
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className="flex flex-col items-center relative z-2 w-[400px] px-[50px] pt-[46px] mt-[20%] animate-in slide-in-from-bottom ease-in-out"
+						className="flex flex-col items-center relative z-2 w-[400px] px-[50px] pt-[46px] mt-[20%] animate-in slide-in-from-bottom ease-in-out pb-10"
 					>
 						<Image
 							src="/character-decor.png"
